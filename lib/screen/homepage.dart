@@ -25,6 +25,13 @@ class _HomepageStateState extends State<HomepageState> {
 
     return Scaffold(
       appBar: myAppBar,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/add-todo')
+              .then((value) => setState(() {}));
+        },
+        child: const Icon(Icons.add),
+      ),
       body: SingleChildScrollView(
         child: SizedBox(
           height: heightBody,

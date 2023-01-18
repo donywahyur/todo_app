@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/screen/addtodo.dart';
 import 'package:todo_app/screen/homepage.dart';
 
 void main() {
@@ -12,11 +13,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          //dark theme
-          brightness: Brightness.dark,
-        ),
-        home: const HomepageState());
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        //dark theme
+        brightness: Brightness.dark,
+      ),
+      routes: {
+        '/': (context) => const HomepageState(),
+        '/add-todo': (context) => const AddTodo(),
+      },
+      initialRoute: '/',
+    );
   }
 }
